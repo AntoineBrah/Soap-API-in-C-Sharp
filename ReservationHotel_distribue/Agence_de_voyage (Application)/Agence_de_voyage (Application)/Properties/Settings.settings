@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Agence_de_voyage__Application_.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Agence_de_voyage__Application__Consultation_Consultation_Hotel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44348/Consultation_Hotel.asmx</Value>
+    </Setting>
+    <Setting Name="Agence_de_voyage__Application__Reservation_Reservation_Hotel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44348/Reservation_Hotel.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

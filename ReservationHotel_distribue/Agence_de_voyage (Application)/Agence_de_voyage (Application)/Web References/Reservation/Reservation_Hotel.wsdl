@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerificationAgencePartenaire">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAgence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationAgencePartenaireResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificationAgencePartenaireResult" type="tns:Msg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Msg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="code" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="traitementReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prenom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carteBancaire" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbPersonne" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nbNuit" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="traitementReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="traitementReservationResult" type="tns:Reservation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Reservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="client" type="tns:Client" />
+          <s:element minOccurs="0" maxOccurs="1" name="idReservation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nbPersonne" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="nbNuit" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="recapitulatif" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Client">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prenom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="carteBancaire" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificationAgencePartenaireSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificationAgencePartenaire" />
+  </wsdl:message>
+  <wsdl:message name="VerificationAgencePartenaireSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificationAgencePartenaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="traitementReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:traitementReservation" />
+  </wsdl:message>
+  <wsdl:message name="traitementReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:traitementReservationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Reservation_HotelSoap">
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <wsdl:input message="tns:VerificationAgencePartenaireSoapIn" />
+      <wsdl:output message="tns:VerificationAgencePartenaireSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="traitementReservation">
+      <wsdl:input message="tns:traitementReservationSoapIn" />
+      <wsdl:output message="tns:traitementReservationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Reservation_HotelSoap" type="tns:Reservation_HotelSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <soap:operation soapAction="http://tempuri.org/VerificationAgencePartenaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traitementReservation">
+      <soap:operation soapAction="http://tempuri.org/traitementReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Reservation_HotelSoap12" type="tns:Reservation_HotelSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <soap12:operation soapAction="http://tempuri.org/VerificationAgencePartenaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traitementReservation">
+      <soap12:operation soapAction="http://tempuri.org/traitementReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Reservation_Hotel">
+    <wsdl:port name="Reservation_HotelSoap" binding="tns:Reservation_HotelSoap">
+      <soap:address location="https://localhost:44348/Reservation_Hotel.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Reservation_HotelSoap12" binding="tns:Reservation_HotelSoap12">
+      <soap12:address location="https://localhost:44348/Reservation_Hotel.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

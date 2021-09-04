@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerificationAgencePartenaire">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idAgence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationAgencePartenaireResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificationAgencePartenaireResult" type="tns:Msg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Msg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="code" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerificationSaisieUtilisateur">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroSaisie" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="capacity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reservation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationSaisieUtilisateurResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificationSaisieUtilisateurResult" type="tns:Msg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VillesDisponibles">
+        <s:complexType />
+      </s:element>
+      <s:element name="VillesDisponiblesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VillesDisponiblesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FourchettePrix">
+        <s:complexType />
+      </s:element>
+      <s:element name="FourchettePrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FourchettePrixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nbHotelSelonCriteres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="capacity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nbHotelSelonCriteresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nbHotelSelonCriteresResult" type="tns:Msg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelsSelonCriteres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="capacity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelsSelonCriteresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelsSelonCriteresResult" type="tns:ArrayOfHotel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHotel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="tns:Hotel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Hotel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="localisation" type="tns:Localisation" />
+          <s:element minOccurs="0" maxOccurs="1" name="classement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="infoHotel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imgChambre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Localisation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="adresse" type="tns:Adresse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Adresse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ville" type="tns:Ville" />
+          <s:element minOccurs="0" maxOccurs="1" name="positionGPS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ville">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codePostal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetImageFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificationAgencePartenaireSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificationAgencePartenaire" />
+  </wsdl:message>
+  <wsdl:message name="VerificationAgencePartenaireSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificationAgencePartenaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificationSaisieUtilisateurSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificationSaisieUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="VerificationSaisieUtilisateurSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificationSaisieUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="VillesDisponiblesSoapIn">
+    <wsdl:part name="parameters" element="tns:VillesDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="VillesDisponiblesSoapOut">
+    <wsdl:part name="parameters" element="tns:VillesDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FourchettePrixSoapIn">
+    <wsdl:part name="parameters" element="tns:FourchettePrix" />
+  </wsdl:message>
+  <wsdl:message name="FourchettePrixSoapOut">
+    <wsdl:part name="parameters" element="tns:FourchettePrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="nbHotelSelonCriteresSoapIn">
+    <wsdl:part name="parameters" element="tns:nbHotelSelonCriteres" />
+  </wsdl:message>
+  <wsdl:message name="nbHotelSelonCriteresSoapOut">
+    <wsdl:part name="parameters" element="tns:nbHotelSelonCriteresResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelsSelonCriteresSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelsSelonCriteres" />
+  </wsdl:message>
+  <wsdl:message name="getHotelsSelonCriteresSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelsSelonCriteresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageFile" />
+  </wsdl:message>
+  <wsdl:message name="GetImageFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Consultation_HotelSoap">
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <wsdl:input message="tns:VerificationAgencePartenaireSoapIn" />
+      <wsdl:output message="tns:VerificationAgencePartenaireSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationSaisieUtilisateur">
+      <wsdl:input message="tns:VerificationSaisieUtilisateurSoapIn" />
+      <wsdl:output message="tns:VerificationSaisieUtilisateurSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VillesDisponibles">
+      <wsdl:input message="tns:VillesDisponiblesSoapIn" />
+      <wsdl:output message="tns:VillesDisponiblesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FourchettePrix">
+      <wsdl:input message="tns:FourchettePrixSoapIn" />
+      <wsdl:output message="tns:FourchettePrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nbHotelSelonCriteres">
+      <wsdl:input message="tns:nbHotelSelonCriteresSoapIn" />
+      <wsdl:output message="tns:nbHotelSelonCriteresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelsSelonCriteres">
+      <wsdl:input message="tns:getHotelsSelonCriteresSoapIn" />
+      <wsdl:output message="tns:getHotelsSelonCriteresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageFile">
+      <wsdl:input message="tns:GetImageFileSoapIn" />
+      <wsdl:output message="tns:GetImageFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Consultation_HotelSoap" type="tns:Consultation_HotelSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <soap:operation soapAction="http://tempuri.org/VerificationAgencePartenaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationSaisieUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/VerificationSaisieUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VillesDisponibles">
+      <soap:operation soapAction="http://tempuri.org/VillesDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FourchettePrix">
+      <soap:operation soapAction="http://tempuri.org/FourchettePrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nbHotelSelonCriteres">
+      <soap:operation soapAction="http://tempuri.org/nbHotelSelonCriteres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelsSelonCriteres">
+      <soap:operation soapAction="http://tempuri.org/getHotelsSelonCriteres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageFile">
+      <soap:operation soapAction="http://tempuri.org/GetImageFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Consultation_HotelSoap12" type="tns:Consultation_HotelSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificationAgencePartenaire">
+      <soap12:operation soapAction="http://tempuri.org/VerificationAgencePartenaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationSaisieUtilisateur">
+      <soap12:operation soapAction="http://tempuri.org/VerificationSaisieUtilisateur" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VillesDisponibles">
+      <soap12:operation soapAction="http://tempuri.org/VillesDisponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FourchettePrix">
+      <soap12:operation soapAction="http://tempuri.org/FourchettePrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nbHotelSelonCriteres">
+      <soap12:operation soapAction="http://tempuri.org/nbHotelSelonCriteres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelsSelonCriteres">
+      <soap12:operation soapAction="http://tempuri.org/getHotelsSelonCriteres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageFile">
+      <soap12:operation soapAction="http://tempuri.org/GetImageFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consultation_Hotel">
+    <wsdl:port name="Consultation_HotelSoap" binding="tns:Consultation_HotelSoap">
+      <soap:address location="https://localhost:44348/Consultation_Hotel.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Consultation_HotelSoap12" binding="tns:Consultation_HotelSoap12">
+      <soap12:address location="https://localhost:44348/Consultation_Hotel.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

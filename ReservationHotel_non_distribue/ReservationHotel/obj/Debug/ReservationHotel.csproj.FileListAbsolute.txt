@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\bin\Debug\ReservationHotel.exe.config
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\bin\Debug\ReservationHotel.exe
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\bin\Debug\ReservationHotel.pdb
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\obj\Debug\ReservationHotel.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\obj\Debug\ReservationHotel.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\obj\Debug\ReservationHotel.exe
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel\ReservationHotel\obj\Debug\ReservationHotel.pdb
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\bin\Debug\ReservationHotel.exe.config
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\bin\Debug\ReservationHotel.exe
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\bin\Debug\ReservationHotel.pdb
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\obj\Debug\ReservationHotel.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\obj\Debug\ReservationHotel.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\obj\Debug\ReservationHotel.exe
+C:\Users\admin\Desktop\Tp Antoine\TP_Soap\ReservationHotel_non_distribue\ReservationHotel\obj\Debug\ReservationHotel.pdb
